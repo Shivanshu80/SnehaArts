@@ -1,21 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing Artist Gallery</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Lawyer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #2d3e50;
+            color: #fff;
+            padding: 30px 0 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background: #1a252f;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 18px;
+            border: 3px solid #2d3e50;
+        }
+
+        .about {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about h2 {
+            margin: 10px 0 8px 0;
+        }
+
+        .about p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .services {
+            margin-bottom: 30px;
+        }
+
+        .services h3 {
+            color: #2d3e50;
+        }
+
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services li {
+            background: #e9ecef;
+            margin: 8px 0;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 1.05em;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h3 {
+            color: #2d3e50;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background: #2d3e50;
+            color: #fff;
+            text-align: center;
+            padding: 18px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Welcome to the <mark>SNEHA</mark> Drawing Artist Gallery</h1>
+        <h1>Advocate A</h1>
+        <p>Legal Solutions for Your Peace of Mind</p>
     </header>
-    <main>
-        <section id="gallery"></section>
-    </main>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="about" id="about">
+            <!-- Replace the src with a Supreme Court image -->
+            <!-- Replace the src with a Supreme Court image -->
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sneha Sharma" class="profile-img">
+            <h2>About Me</h2>
+            <p>
+                I am <mark><b>ARTI</b></mark>, a dedicated lawyer with over 8 years of experience in civil, criminal,
+                and corporate law. My mission is to provide honest, reliable, and effective legal solutions for my
+                clients.
+            </p>
+        </section>
+        <section class="services" id="services">
+            <h3>Services</h3>
+            <ul>
+                <li>Civil Litigation</li>
+                <li>Criminal Defense</li>
+                <li>Corporate Law</li>
+                <li>Family Law</li>
+                <li>Legal Consultation</li>
+            </ul>
+        </section>
+        <section class="contact" id="contact">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                Email: <a href="mailto:sneha.lawyer@email.com">sneha.lawyer@email.com</a><br>
+                Phone: <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+        </section>
+    </div>
     <footer>
-        <p>&copy; 2025 Drawing Artist. All rights reserved.</p>
+        &copy; 2025 Advocate <mark><b>ARTI</b></mark>. All rights reserved.
     </footer>
-    <script src="scripts/app.js"></script>
+    <script>
+        document.querySelector('.contact-info a[href^="mailto:"]').addEventListener('click', function (e) {
+            alert('You are about to send an email to Advocate Sneha Sharma.');
+        });
+
+        document.querySelector('.about').addEventListener('mouseenter', function () {
+            this.style.background = '#e9ecef';
+        });
+        document.querySelector('.about').addEventListener('mouseleave', function () {
+            this.style.background = '';
+        });
+
+        document.querySelector('.contact-info a[href^="tel:"]').addEventListener('click', function (e) {
+            alert('Thank you for reaching out! Advocate Sneha Sharma will contact you soon.');
+        });
+    </script>
 </body>
+
 </html>
