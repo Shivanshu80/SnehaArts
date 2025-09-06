@@ -9,7 +9,8 @@
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: #f4f4f4;
+            background: linear-gradient(120deg, #f8ffae 0%, #43c6ac 50%, #191654 100%);
+            perspective: 1200px;
         }
 
         header {
@@ -17,6 +18,12 @@
             color: #fff;
             padding: 30px 0 20px 0;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(45,62,80,0.25);
+            transform: translateZ(0) scale(1.02);
+            transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
+        }
+        header:hover {
+            transform: rotateX(8deg) scale(1.04);
         }
 
         h1 {
@@ -45,9 +52,15 @@
             max-width: 900px;
             margin: 40px auto;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(45,62,80,0.15), 0 1.5px 8px rgba(0,0,0,0.07);
             padding: 30px;
+            transform-style: preserve-3d;
+            transition: box-shadow 0.3s, transform 0.5s cubic-bezier(.25,.8,.25,1);
+        }
+        .container:hover {
+            box-shadow: 0 24px 80px rgba(45,62,80,0.22), 0 2px 12px rgba(0,0,0,0.10);
+            transform: rotateY(-8deg) scale(1.03);
         }
 
         .profile-img {
@@ -57,11 +70,23 @@
             object-fit: cover;
             margin-bottom: 18px;
             border: 3px solid #2d3e50;
+            box-shadow: 0 8px 32px rgba(45,62,80,0.18);
+            transform: rotateY(0deg) scale(1);
+            transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+        }
+        .profile-img:hover {
+            transform: rotateY(18deg) scale(1.08);
+            box-shadow: 0 16px 64px rgba(45,62,80,0.28);
         }
 
         .about {
             text-align: center;
             margin-bottom: 30px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+        }
+        .about:hover {
+            transform: rotateX(10deg) scale(1.02);
         }
 
         .about h2 {
@@ -92,10 +117,22 @@
             padding: 10px 16px;
             border-radius: 6px;
             font-size: 1.05em;
+            box-shadow: 0 2px 8px rgba(45,62,80,0.10);
+            transform: translateZ(0);
+            transition: transform 0.4s, box-shadow 0.3s;
+        }
+        .services li:hover {
+            transform: scale(1.07) rotateY(8deg);
+            box-shadow: 0 8px 32px rgba(45,62,80,0.18);
         }
 
         .contact {
             text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+        }
+        .contact:hover {
+            transform: rotateX(-8deg) scale(1.02);
         }
 
         .contact h3 {
@@ -115,50 +152,64 @@
             position: fixed;
             width: 100%;
             bottom: 0;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 -2px 24px rgba(45,62,80,0.18);
+            transform: translateZ(0);
+            transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
+        }
+        footer:hover {
+            transform: rotateY(6deg) scale(1.03);
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Advocate A</h1>
-        <p>Legal Solutions for Your Peace of Mind</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section class="about" id="about">
-            <!-- Replace the src with a Supreme Court image -->
-            <!-- Replace the src with a Supreme Court image -->
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sneha Sharma" class="profile-img">
-            <h2>About Me</h2>
-            <p>
-                I am <mark><b>ARTI</b></mark>, a dedicated lawyer with over 8 years of experience in civil, criminal,
-                and corporate law. My mission is to provide honest, reliable, and effective legal solutions for my
-                clients.
-            </p>
-        </section>
-        <section class="services" id="services">
-            <h3>Services</h3>
-            <ul>
-                <li>Civil Litigation</li>
-                <li>Criminal Defense</li>
-                <li>Corporate Law</li>
-                <li>Family Law</li>
-                <li>Legal Consultation</li>
-            </ul>
-        </section>
-        <section class="contact" id="contact">
-            <h3>Contact</h3>
-            <div class="contact-info">
-                Email: <a href="mailto:sneha.lawyer@email.com">sneha.lawyer@email.com</a><br>
-                Phone: <a href="tel:+919876543210">+91 98765 43210</a>
+    <header style="background: #191654; color: #fff; padding: 0; box-shadow: 0 8px 32px rgba(25,22,84,0.18);">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; padding: 24px 32px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="https://img.icons8.com/ios-filled/80/ffffff/paint-palette.png" alt="Advocate Arti Logo" style="width:48px;height:48px;filter:drop-shadow(0 2px 8px #43c6ac);">
+                <div>
+                    <h1 style="margin: 0; font-size: 2.2em; font-family: 'Segoe UI', Arial, sans-serif; letter-spacing: 2px;">Advocate Arti</h1>
+                    <p style="margin: 0; font-size: 1.1em; color: #43c6ac; font-weight: 500;">Creative Legal Solutions</p>
+                </div>
             </div>
-        </section>
+            <nav style="display: flex; gap: 18px; background: #f8ffae; padding: 10px 24px; border-radius: 32px; box-shadow: 0 2px 12px rgba(25,22,84,0.08);">
+                <a href="#about" style="background: #fff; color: #191654; padding: 10px 22px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 1.08em; box-shadow: 0 2px 8px rgba(25,22,84,0.06); transition: background 0.3s, color 0.3s;">About</a>
+                <a href="#services" style="background: #fff; color: #191654; padding: 10px 22px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 1.08em; box-shadow: 0 2px 8px rgba(25,22,84,0.06); transition: background 0.3s, color 0.3s;">Services</a>
+                <a href="#contact" style="background: #fff; color: #191654; padding: 10px 22px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 1.08em; box-shadow: 0 2px 8px rgba(25,22,84,0.06); transition: background 0.3s, color 0.3s;">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
+            <div style="flex: 1 1 260px; min-width: 260px; max-width: 320px; background: rgba(255,255,255,0.95); border-radius: 18px; box-shadow: 0 8px 32px rgba(45,62,80,0.12); padding: 28px 20px; display: flex; flex-direction: column; align-items: center;">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sneha Sharma" class="profile-img">
+                <h2 style="margin-top: 12px;">About Me</h2>
+                <p style="color: #555; font-size: 1.1em; text-align: center;">I am <mark><b>ARTI</b></mark>, a passionate lawyer with 8+ years of experience in civil, criminal, and corporate law. My goal is to deliver honest, reliable, and effective legal solutions for every client.</p>
+            </div>
+            <div style="flex: 1 1 260px; min-width: 260px; max-width: 320px; background: rgba(255,255,255,0.95); border-radius: 18px; box-shadow: 0 8px 32px rgba(45,62,80,0.12); padding: 28px 20px; display: flex; flex-direction: column; align-items: center;">
+                <h3 style="color: #2d3e50; margin-bottom: 16px;">Services</h3>
+                <ul style="list-style: none; padding: 0; width: 100%;">
+                    <li class="service-box">Civil Litigation</li>
+                    <li class="service-box">Criminal Defense</li>
+                    <li class="service-box">Corporate Law</li>
+                    <li class="service-box">Family Law</li>
+                    <li class="service-box">Legal Consultation</li>
+                </ul>
+            </div>
+            <div style="flex: 1 1 260px; min-width: 260px; max-width: 320px; background: rgba(255,255,255,0.95); border-radius: 18px; box-shadow: 0 8px 32px rgba(45,62,80,0.12); padding: 28px 20px; display: flex; flex-direction: column; align-items: center;">
+                <h3 style="color: #2d3e50; margin-bottom: 16px;">Contact</h3>
+                <div class="contact-info" style="font-size: 1.1em; text-align: center; margin-bottom: 12px;">
+                    Email: <a href="mailto:sneha.lawyer@email.com">sneha.lawyer@email.com</a><br>
+                    Phone: <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+                <form style="width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: 8px;" onsubmit="event.preventDefault(); alert('Thank you for your query! We will get back to you soon.'); this.reset();">
+                    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: 8px; border: 1px solid #e0e7ff; font-size: 1em;">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: 8px; border: 1px solid #e0e7ff; font-size: 1em;">
+                    <textarea name="message" placeholder="Your Message" required style="padding: 10px; border-radius: 8px; border: 1px solid #e0e7ff; font-size: 1em; min-height: 70px;"></textarea>
+                    <button type="submit" style="background: #43c6ac; color: #191654; font-weight: 600; border: none; border-radius: 8px; padding: 10px 0; font-size: 1.08em; cursor: pointer; box-shadow: 0 2px 8px rgba(67,198,172,0.12); transition: background 0.3s;">Send Query</button>
+                </form>
+            </div>
+        </div>
     </div>
     <footer>
         &copy; 2025 Advocate <mark><b>ARTI</b></mark>. All rights reserved.
